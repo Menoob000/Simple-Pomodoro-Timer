@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="timer-container" data-mode="focus">
+      <div class="timer">
+        <h1 class="timer-title">Pomodoro Timer</h1>
+
+        <nav class="nav-container" id="navbar">
+          <button class="mode-btn active" data-mode="focus">Focus</button>
+          <button class="mode-btn" data-mode="short">Short Break</button>
+          <button class="mode-btn" data-mode="long">Long Break</button>
+        </nav>
+
+        <div class="clock">
+          <svg
+            class="circle"
+            width="200"
+            height="200"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              id="ring-track"
+              class="ring-track"
+              cx="125"
+              cy="125"
+              r="100"
+              fill="blue"
+            />
+            <circle
+              id="ring-progress"
+              class="ring-progress"
+              cx="125"
+              cy="125"
+              r="100"
+              fill="blue"
+            />
+          </svg>
+          <div id="clock-digits" class="clock-digits">00:00</div>
+        </div>
+
+        <div class="timer-button">
+          <button class="start-btn">Start</button>
+          <button class="reset-btn">Reset</button>
+        </div>
+
+        <details class="Settings">
+          <summary>Settings</summary>
+          <div class="Settings-grid">
+            <div class="Settings-label">
+              <label>
+                <span>focus duration</span>
+                <input
+                  class="settings-input"
+                  type="number"
+                  data-key="focus"
+                  min="1"
+                  max="100"
+                  placeholder="50"
+                />
+              </label>
+            </div>
+
+            <div class="Settings-label">
+              <label>
+                <span>Short Break Duration</span>
+                <input
+                  class="settings-input"
+                  type="number"
+                  data-key="short"
+                  min="1"
+                  max="100"
+                  value="1"
+                  placeholder="50"
+                />
+              </label>
+            </div>
+
+            <div class="Settings-label">
+              <label>
+                <span>Long Break Duration</span>
+                <input
+                  class="settings-input"
+                  type="number"
+                  data-key="long"
+                  min="1"
+                  max="100"
+                  placeholder="50"
+                  value="30"
+                />
+              </label>
+            </div>
+
+            <!-- <div class="Settings-label">
+              <label>
+                <span>Sessions until Long Break</span>
+                <input
+                  class="settings-input"
+                  type="number"
+                  data-key="long"
+                  min="1"
+                  max="200"
+                  placeholder="50"
+                />
+              </label>
+            </div> -->
+          </div>
+        </details>
+      </div>
+    </div>
+  </body>
+</html>
